@@ -32,18 +32,27 @@ def findMeanMedianMode(numList):
         mean = mean / len(numList)
     meanMedianModeOutput.append("Mean: " + str(round(mean, 4)))
     numList.sort()
+    medianIndex = len(numList)-1
+    medianIndex = medianIndex / 2
     if len(numList) % 2 != 0:
-        median = numList[(len(numList) / 2) - 1]
+        median = numList[int(medianIndex)]
     else:
-        medianIndex = len(numList)-1
-        medianIndex = medianIndex / 2
         medianNum1 = int(numList[int(medianIndex + 0.5)])
         medianNum2 = int(numList[int(medianIndex - 0.5)])
         median = medianNum1 + medianNum2
         median = median / 2
     meanMedianModeOutput.append("Median: " + str(median))
 
+    meanDictionary ={}
+    for each in numList:
+        meanDictionary[each] = meanDictionary.get(each, 0) + 1
+    meanMedianModeOutput.append(meanDictionary)
+            
+
+
     return meanMedianModeOutput
+
+
 
 
 print(findMeanMedianMode(numList))

@@ -1,4 +1,4 @@
-#Weighted Average Calculator
+#Grade Comparing Calculator
 numberofInput = input("Please enter number of grades to be proccesed: ")
 numList = []
 for i in range(1, int(numberofInput)+1):
